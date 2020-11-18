@@ -43,6 +43,9 @@ func Update() {
 		CursorX, CursorY = ebiten.TouchPosition(id)
 		LeftMouseButtonPressed = true
 	}
+	if len(touches) == 0 {
+		log.Println("ebitenui: no touches")
+	}
 
 	wx, wy := ebiten.Wheel()
 	WheelX += wx
