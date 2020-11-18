@@ -38,9 +38,9 @@ func Update() {
 
 	// all touches emulate mouse and left button
 	touches := inpututil.JustPressedTouchIDs()
-	for _, id := range touches {
-		log.Println("ebitenui: touch")
+	for tidx, id := range touches {
 		CursorX, CursorY = ebiten.TouchPosition(id)
+		log.Println("ebitenui touch:", tidx, CursorX, CursorY)
 		LeftMouseButtonPressed = true
 	}
 	if len(touches) == 0 {
