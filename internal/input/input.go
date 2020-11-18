@@ -2,6 +2,7 @@ package input
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/inpututil"
 )
 
 var (
@@ -32,6 +33,13 @@ func Update() {
 	MiddleMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonMiddle)
 	RightMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonRight)
 	CursorX, CursorY = ebiten.CursorPosition()
+
+	// all touches emulate mouse and left button
+	touches := inpututil.JustPressedTouchIDs()
+	for _, id := range touches {
+		CursorX, CursorY = ebiten.TouchPosition(id)
+		LeftMouseButtonPressed = true
+	}
 
 	wx, wy := ebiten.Wheel()
 	WheelX += wx
