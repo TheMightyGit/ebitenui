@@ -41,7 +41,8 @@ func Update() {
 	for tidx, id := range touches {
 		CursorX, CursorY = ebiten.TouchPosition(id)
 		log.Println("ebitenui touch:", tidx, CursorX, CursorY)
-		if inpututil.TouchPressDuration(id) > 2 {
+		if inpututil.TouchPressDuration(id) > 3 {
+			log.Println("ebitenui lmb:", tidx, CursorX, CursorY)
 			LeftMouseButtonPressed = true
 		}
 	}
