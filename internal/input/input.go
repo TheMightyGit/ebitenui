@@ -43,9 +43,6 @@ func Update() {
 		log.Println("ebitenui touch:", tidx, CursorX, CursorY)
 		LeftMouseButtonPressed = true
 	}
-	//	if len(touches) == 0 {
-	//		log.Println("ebitenui: no touches")
-	//	}
 
 	wx, wy := ebiten.Wheel()
 	WheelX += wx
@@ -67,9 +64,6 @@ func Update() {
 // Draw updates the input system. This is called by the UI.
 func Draw() {
 	LeftMouseButtonJustPressed = LeftMouseButtonPressed && LeftMouseButtonPressed != LastLeftMouseButtonPressed
-	if LeftMouseButtonJustPressed {
-		log.Println("ebitenui LeftMouseButtonJustPressed")
-	}
 	MiddleMouseButtonJustPressed = MiddleMouseButtonPressed && MiddleMouseButtonPressed != LastMiddleMouseButtonPressed
 	RightMouseButtonJustPressed = RightMouseButtonPressed && RightMouseButtonPressed != LastRightMouseButtonPressed
 
