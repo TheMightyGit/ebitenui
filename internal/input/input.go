@@ -4,7 +4,6 @@ import (
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/hajimehoshi/ebiten/v2/inpututil"
 )
 
 var (
@@ -37,10 +36,12 @@ func Update() {
 	CursorX, CursorY = ebiten.CursorPosition()
 
 	// all touches emulate mouse and left button
-	touches := inpututil.JustPressedTouchIDs()
+	touches := ebiten.TouchIDs()
 	for tidx, id := range touches {
 		CursorX, CursorY = ebiten.TouchPosition(id)
 		log.Println("ebitenui touch:", tidx, CursorX, CursorY)
+	}
+	if len(touches) > 1 {
 		LeftMouseButtonPressed = true
 	}
 
