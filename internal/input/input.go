@@ -68,7 +68,7 @@ func Update() {
 func Draw() {
 	LeftMouseButtonJustPressed = LeftMouseButtonPressed && LeftMouseButtonPressed != LastLeftMouseButtonPressed
 	if LastLeftMouseButtonPressed {
-		log.Println("LastLeftMouseButtonPressed")
+		log.Println("LeftMouseButtonJustPressed")
 	}
 	MiddleMouseButtonJustPressed = MiddleMouseButtonPressed && MiddleMouseButtonPressed != LastMiddleMouseButtonPressed
 	RightMouseButtonJustPressed = RightMouseButtonPressed && RightMouseButtonPressed != LastRightMouseButtonPressed
