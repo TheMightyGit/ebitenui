@@ -46,6 +46,9 @@ func Update() {
 			LeftMouseButtonPressed = true
 		}
 	}
+	if len(touches) == 0 {
+		log.Println("no touches")
+	}
 
 	wx, wy := ebiten.Wheel()
 	WheelX += wx
