@@ -40,8 +40,9 @@ func Update() {
 	for tidx, id := range touches {
 		CursorX, CursorY = ebiten.TouchPosition(id)
 		log.Println("ebitenui touch:", tidx, CursorX, CursorY)
+		break // we only want the pos of the first touch
 	}
-	if len(touches) > 1 {
+	if len(touches) > 1 { // any other touch is lmb
 		LeftMouseButtonPressed = true
 	}
 
