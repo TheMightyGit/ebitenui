@@ -67,6 +67,9 @@ func Update() {
 // Draw updates the input system. This is called by the UI.
 func Draw() {
 	LeftMouseButtonJustPressed = LeftMouseButtonPressed && LeftMouseButtonPressed != LastLeftMouseButtonPressed
+	if LeftMouseButtonJustPressed {
+		log.Println("ebitenui LeftMouseButtonJustPressed")
+	}
 	MiddleMouseButtonJustPressed = MiddleMouseButtonPressed && MiddleMouseButtonPressed != LastMiddleMouseButtonPressed
 	RightMouseButtonJustPressed = RightMouseButtonPressed && RightMouseButtonPressed != LastRightMouseButtonPressed
 
