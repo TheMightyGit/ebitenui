@@ -75,7 +75,7 @@ func Update() {
 // Draw updates the input system. This is called by the UI.
 func Draw() {
 	LeftMouseButtonJustPressed = LeftMouseButtonPressed && LeftMouseButtonPressed != LastLeftMouseButtonPressed
-	if LastLeftMouseButtonPressed {
+	if LeftMouseButtonJustPressed {
 		log.Println("LeftMouseButtonJustPressed")
 	}
 	MiddleMouseButtonJustPressed = MiddleMouseButtonPressed && MiddleMouseButtonPressed != LastMiddleMouseButtonPressed
