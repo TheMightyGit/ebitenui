@@ -37,6 +37,7 @@ func Update() {
 		RightMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonRight)
 		CursorX, CursorY = ebiten.CursorPosition()
 	*/
+	LeftMouseButtonPressed = false
 
 	// all touches emulate mouse and left button
 	touches := ebiten.TouchIDs()
