@@ -31,10 +31,12 @@ var (
 
 // Update updates the input system. This is called by the UI.
 func Update() {
-	LeftMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft)
-	MiddleMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonMiddle)
-	RightMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonRight)
-	CursorX, CursorY = ebiten.CursorPosition()
+	/*
+		LeftMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft)
+		MiddleMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonMiddle)
+		RightMouseButtonPressed = ebiten.IsMouseButtonPressed(ebiten.MouseButtonRight)
+		CursorX, CursorY = ebiten.CursorPosition()
+	*/
 
 	// all touches emulate mouse and left button
 	touches := ebiten.TouchIDs()
