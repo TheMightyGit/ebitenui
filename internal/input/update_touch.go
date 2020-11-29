@@ -27,11 +27,11 @@ func Update() {
 		// two fingers for scroll
 		if !touchScrolling {
 			// start of scroll touch
-			lastTouchScrollPosX, lastTouchScrollPosY = ebiten.TouchPosition(touches[0])
+			lastTouchScrollPosX, lastTouchScrollPosY = ebiten.TouchPosition(touches[1])
 			log.Println("start scrolling", WheelX, WheelY)
 		} else {
 			// continue scrolling
-			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[0])
+			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[1])
 			WheelX += float64(touchScrollPosX - lastTouchScrollPosX)
 			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
 			log.Println("continue scrolling", WheelX, WheelY)
