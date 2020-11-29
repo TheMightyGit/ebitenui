@@ -3,6 +3,8 @@
 package input
 
 import (
+	"log"
+
 	"github.com/hajimehoshi/ebiten/v2"
 )
 
@@ -32,6 +34,8 @@ func Update() {
 			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[0])
 			WheelX += float64(touchScrollPosX - lastTouchScrollPosX)
 			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
+			log.Println(WheelX, WheelY)
+			lastTouchScrollPosX, lastTouchScrollPosY = touchScrollPosX, touchScrollPosY
 		}
 	}
 
