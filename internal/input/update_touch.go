@@ -36,6 +36,7 @@ func Update() {
 			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
 			log.Println(WheelX, WheelY)
 			lastTouchScrollPosX, lastTouchScrollPosY = touchScrollPosX, touchScrollPosY
+			touchScrolling = true
 		}
 	}
 
