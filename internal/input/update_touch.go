@@ -28,7 +28,6 @@ func Update() {
 		if !touchScrolling {
 			// start of scroll touch
 			lastTouchScrollPosX, lastTouchScrollPosY = ebiten.TouchPosition(touches[0])
-			touchScrolling = true
 		} else {
 			// continue scrolling
 			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[0])
@@ -36,8 +35,8 @@ func Update() {
 			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
 			log.Println(WheelX, WheelY)
 			lastTouchScrollPosX, lastTouchScrollPosY = touchScrollPosX, touchScrollPosY
-			touchScrolling = true
 		}
+		touchScrolling = true
 	}
 
 	AnyKeyPressed = false
