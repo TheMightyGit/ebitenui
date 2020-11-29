@@ -8,7 +8,7 @@ import (
 
 var (
 	touchScrolling                           bool
-	lastTouchScrollPosX, lastTouchScrollPosY int
+	lastTouchScrollPosX, lastTouchScrollPosY float64
 )
 
 // Update updates the input system. This is called by the UI.
