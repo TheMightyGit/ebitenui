@@ -35,7 +35,7 @@ func Update() {
 			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[0])
 			WheelX += float64(touchScrollPosX - lastTouchScrollPosX)
 			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
-			log.Println("continue scrolling", WheelX, WheelY)
+			log.Println("continue scrolling", WheelX, WheelY, touchScrollPosX, lastTouchScrollPosY)
 			lastTouchScrollPosX, lastTouchScrollPosY = touchScrollPosX, touchScrollPosY
 		}
 		touchScrolling = true
