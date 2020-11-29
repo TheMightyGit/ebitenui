@@ -8,7 +8,7 @@ import (
 
 var (
 	touchScrolling                           bool
-	lastTouchScrollPosX, lastTouchScrollPosY float64
+	lastTouchScrollPosX, lastTouchScrollPosY int
 )
 
 // Update updates the input system. This is called by the UI.
@@ -30,8 +30,8 @@ func Update() {
 		} else {
 			// continue scrolling
 			touchScrollPosX, touchScrollPosY := ebiten.TouchPosition(touches[0])
-			WheelX += touchScrollPosX - lastTouchScrollPosX
-			WheelY += touchScrollPosY - lastTouchScrollPosY
+			WheelX += float64(touchScrollPosX - lastTouchScrollPosX)
+			WheelY += float64(touchScrollPosY - lastTouchScrollPosY)
 		}
 	}
 
